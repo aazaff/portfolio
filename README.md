@@ -23,9 +23,9 @@ I have forked one of the [lab assignments](https://github.com/aazaff/portfolio/b
 I generally conduct most of my geospatial analyses in [QuantumGIS](www.qgis.org) or [postGIS](http://www.postgis.net/). This is an example of some R scripts I wrote that clean and analyze 550 Paleogeographic Maps from the [EarthByte](www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and postGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications (see below) and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
 
 ### excerpt
-I have forked a modified version of the original {R script}(https://github.com/aazaff/portfolio/blob/master/quantifyPlate.RV2) from our lab group's private repository to here. This script ingests the original shapefiles and calculates various metrics about the Earth's former paleogeographic state. This includes, for example, the changing distance between all pairwise comparisons of tectonic plates throughout the history of the Phanerozoic. 
+I have forked a modified version of the original [R script](https://github.com/aazaff/portfolio/blob/master/quantifyPlate.RV2) from our lab group's private repository to here. This script ingests the original shapefiles and calculates various metrics about the Earth's former paleogeographic state. This includes, for example, the changing distance between all pairwise comparisons of tectonic plates throughout the history of the Phanerozoic. 
 
-**This script will not run without original datafiles.** It is only included as a demonstration of how R can be used to interact with postGIS.
+**This script will not run without the original datafiles.** It is only included as a demonstration of how R can be used to interact with postGIS.
 
 ### further information
 + [Macrostrat Database Paleogeography](www.macrostrat.org/api/paleogeography) These maps can be accessed using the Macrostrat Database's paleogeography route.
