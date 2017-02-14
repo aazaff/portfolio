@@ -1,5 +1,5 @@
 # portfolio
-The following is a collection of excerpts from scientific projects, educational resources, or programming scripts developed by [Dr. Andrew Zaffos](www.azstrata.org). Many of these examples have been slightly edited from their original versions to protect proprietary information or ongoing research.
+The following is a collection of excerpts from scientific projects, educational resources, and programming scripts developed by [Dr. Andrew Zaffos](www.azstrata.org). Some examples have been edited from their original versions to protect proprietary information or ongoing research.
 
 ## table of contents
 + [Quantitative Paleobiology](#quantitative-paleobiology): R, git, web APIs
