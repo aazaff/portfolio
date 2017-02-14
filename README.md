@@ -1,14 +1,15 @@
 # portfolio
 The following is a collection of excerpts from scientific projects, educational resources, and programming scripts developed by [Dr. Andrew Zaffos](www.azstrata.org). Some examples have been edited from their original versions to protect proprietary information or ongoing research.
 
-## table of contents
+### table of contents
 + [Quantitative Paleobiology](#quantitative-paleobiology): R, git, web APIs
 + [Paleogeographic Analyses](#paleogeographic-analyses): postGIS, R, postgreSQL, web APIs
 + Machine Learning in GeoDeepDive: R, postgreSQL, Condor (high-throughput computing)
 + Velociraptr Package: R, web APIs
 + Multivariate Fossil Analyses: R
 
-# quantitative paleobiology
+
+## quantitative paleobiology
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
 
 ### excerpt
@@ -25,7 +26,8 @@ This is one of the maps students create during the lab.
 + [R Tutorial](https://github.com/aazaff/startLearn.R/blob/master/README.md#an-introduction-to-r): A lengthy R tutorial covering beginner, intermediate, advanced, and expert level topics in R.
 + [GitHub Tutorial](https://github.com/paleobiodb/teachPaleobiology/blob/master/GitTutorial/gitTutorial.md#introduction): A simple GitHub tutorial used to teach students how to create a GitHub account and repository, and how to pull and push to the repo.
 
-# paleogeographic analyses
+
+## paleogeographic analyses
 I conduct most of my geospatial analyses in [QuantumGIS](www.qgis.org) or [postGIS](http://www.postgis.net/). This is an example of some R scripts I wrote to clean and analyze paleogeographic maps from the [EarthByte](www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and postGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications (see below) and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
 
 ### excerpt
