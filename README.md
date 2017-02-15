@@ -4,7 +4,7 @@ The following is a collection of excerpts from scientific projects, educational 
 ### table of contents
 + [Quantitative Paleobiology](#quantitative-paleobiology): R, git, web APIs
 + [Paleogeographic Analyses](#paleogeographic-analyses): postGIS, R, postgreSQL, web APIs
-+ Machine Learning in GeoDeepDive: R, postgreSQL, Condor (high-throughput computing)
++ [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive): R, postgreSQL, Condor (high-throughput computing)
 + Velociraptr Package: R, web APIs
 + Multivariate Fossil Analyses: R
 
@@ -47,13 +47,13 @@ This is an example of how the maps and geographic indices created by the above R
 + [Macrostrat Database Paleogeography](www.macrostrat.org/api/paleogeography) These maps can be accessed using the Macrostrat Database's paleogeography route.
 + [Paleobiology Database Navigator](www.paleobiodb.org/navigator) These maps underlie the paleogeographic maps in the Paleobiology Database's data visualization tool.
 
-## Machine Learning in Geodeepdive
-Fifty percent of my current appointment is funded by the [GeoDeepDive Database](https://geodeepdive.org/) initiative. GeoDeepDive is a digital library of scientific documents (e.g., articles, books, reports). We take these documents from our publishing partners (e.g., Elsevier, Wiley) and process them into data analyzable products: natural language processing (NLP), optical character recognition (OCR), and sophisticated elasticsearch tuples for various dictionary terms (e.g., documents mentioning certain countries, minerals, or organisms).
+## Text Mining in Geodeepdive
+Fifty percent of my current appointment is funded by the [GeoDeepDive Database](https://geodeepdive.org/) initiative. GeoDeepDive is a digital library of scientific documents (e.g., articles, books, reports). We take these documents from our publishing partners (e.g., Elsevier, Wiley,Taylor & Francis) and process them into data analyzable products: natural language processing (NLP), optical character recognition (OCR), and sophisticated elasticsearch tuples for various dictionary terms (e.g., documents mentioning certain countries, minerals, or organisms).
 
 ### excerpt
-I take these products and analyze them to produce scientific results. One project I am currently working on with my intern, [Erika Ito](https://github.com/ItoErika) attempts to identify fossiliferous formations in the scientific literature, and associated age and geolocation information. Because this is ongoing research, some of the code has been hidden.
+I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that attempts to match references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. Eventually, our group hopes to create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System]((https://www.iobis.org/)). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
 
 ### further information
-+ [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford.
++ [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
 
 ## multivariate ordination
