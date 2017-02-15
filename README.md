@@ -8,7 +8,6 @@ The following is a collection of excerpts from scientific projects, educational 
 + Velociraptr Package: R, web APIs
 + Multivariate Fossil Analyses: R
 
-
 ## Quantitative Paleobiology
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
 
@@ -51,9 +50,23 @@ This is an example of how the maps and geographic indices created by the above R
 Fifty percent of my current appointment is funded by the [GeoDeepDive Database](https://geodeepdive.org/) initiative. GeoDeepDive is a digital library of scientific documents (e.g., articles, books, reports). We take these documents from our publishing partners (e.g., Elsevier, Wiley,Taylor & Francis) and process them into data analyzable products: natural language processing (NLP), optical character recognition (OCR), and sophisticated elasticsearch tuples for various dictionary terms (e.g., documents mentioning certain countries, minerals, or organisms).
 
 ### excerpt
-I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that attempts to match references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. Eventually, our group hopes to create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System]((https://www.iobis.org/)). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
+I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that attempts to match references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. 
+
+Our group hopes to eventually create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System]((https://www.iobis.org/)). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
 
 ### further information
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
 
-## multivariate ordination
+## Multivariate Analysis
+My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites x variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
+
+### excerpt
+This is a simple example from my dissertation using detrended correspondence analysis (i.e., ordination) to infer the presence of  ecological gradients in the distribution of marine organisms 380 million years ago. This method found that these ancient marine taxa were geographically distributed based on their water depth and sediment type preferences. This example is interesting because, as an additional twist, I apply an affine rotation to the ordination so that the geographic distribution of the fossils runs parallel to the environmental distribution of the fossils.
+
+### example figure
+
+### further information
++ [Dissertation](https://etd.ohiolink.edu/!etd.send_file?accession=ucin1415625754&disposition=inline): My 2014 dissertation, which focused heavily on ordination methods.
++ [Holland and Zaffos 2011](https://www.jstor.org/stable/23014756?seq=1#page_scan_tab_contents) A paper I co-wrote using ordination and gaussian logistic regression techniques.
++ [Zaffos and Miller 2015](http://www.bioone.org/doi/abs/10.1017/pab.2014.13) A paper I co-wrote using ordination and gaussian logistic regression techniques.
++ [Brett et al. 2016](https://books.google.com/books?id=emwpDQAAQBAJ&pg=PA297&lpg=PA297&dq=holland+and+zaffos+2011&source=bl&ots=tKBUtc0Fpc&sig=stwzAOfgETFfI7SSDt4HcnLEbZk&hl=en&sa=X&ved=0ahUKEwi_14eF0ZLSAhXoJ5oKHUIHB0AQ6AEIHzAB#v=onepage&q=holland%20and%20zaffos%202011&f=false) A paper I co-wrote using ordination and gaussian logistic regression techniques.
