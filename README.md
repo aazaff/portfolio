@@ -5,7 +5,7 @@ The following is a collection of excerpts from scientific projects, educational 
 + [Quantitative Paleobiology](#quantitative-paleobiology): R, git, web APIs
 + [Paleogeographic Analyses](#paleogeographic-analyses): postGIS, R, postgreSQL, web APIs
 + [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive): R, postgreSQL, Condor (high-throughput computing)
-+ Velociraptr Package: R, web APIs
++ [Velociraptr Package](#r-packages-velociraptr): R, web APIs
 + Multivariate Fossil Analyses: R
 
 ## Quantitative Paleobiology
@@ -24,7 +24,6 @@ This is one of the maps students create during the lab.
 + [Course GitHub Repository](https://github.com/paleobiodb/teachPaleobiology#geoscience-541-paleobiology): The courses main page (readme) has links to the syllabus, lectures, lab assignments, reading assignments, writing assignments, GitHub tutorial, and R tutorial.
 + [R Tutorial](https://github.com/aazaff/startLearn.R/blob/master/README.md#an-introduction-to-r): A lengthy R tutorial covering beginner, intermediate, advanced, and expert level topics in R.
 + [GitHub Tutorial](https://github.com/paleobiodb/teachPaleobiology/blob/master/GitTutorial/gitTutorial.md#introduction): A simple GitHub tutorial used to teach students how to create a GitHub account and repository, and how to pull and push to the repo.
-
 
 ## Paleogeographic Analyses
 I conduct most of my geospatial analyses in [QuantumGIS](www.qgis.org) or [postGIS](http://www.postgis.net/). This is an example of some R scripts I wrote to clean and analyze paleogeographic maps from the [EarthByte](www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and postGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications (see below) and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
@@ -56,6 +55,15 @@ Our group hopes to eventually create strong cross-referenced links between scien
 
 ### further information
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
+
+## R Package: velociraptr
+I am the author of the velociraptr package for R. It is a package designed to make downloading data from the Macrostrat and Paleobiology Database 
+
+### excerpt
+
+### example figure
+
+### further information
 
 ## Multivariate Analysis
 My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites x variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
