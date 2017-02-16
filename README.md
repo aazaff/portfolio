@@ -65,6 +65,11 @@ This is an [example](https://github.com/aazaff/portfolio/blob/master/excerptRich
 ### example figure
 This figure depicts the history of marine biodiversity (number of unique marine organisms) throughout the history of complex animal life.
 
+![Richness Plot](/images/richnessplot.png)
+> Top - The number of different marine animal types during each million year increment of the past 541 million years. This calculation is based on the oldest and youngest fossil occurrence of each animal type.
+
+> Bottom - The number of different marine animals types during each internationally reocgnized geologic epoch of the past 541 million years. This calculation is based on the number of marine fossils found in each time bin. The sample size of each bin is standardized using the Shareholder Quorum Subsampling method to account for the fact that some time intervals are more thoroughly sampled than others.
+
 ### further information
 + [Quantitative Paleobiology Course Repository](https://github.com/paleobiodb/teachPaleobiology#geoscience-541-paleobiology): Most of these functions were written for practical scientific research purposes, but others were written so my students could use them in lab assignments.
 + [quantiativeFossils](https://github.com/aazaff/quantitativeFossils.R): This is the original development repository for this package.
@@ -73,9 +78,18 @@ This figure depicts the history of marine biodiversity (number of unique marine 
 My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites x variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
 
 ### excerpt
-This is a simple example from my dissertation using detrended correspondence analysis (i.e., ordination) to infer the presence of  ecological gradients in the distribution of marine organisms 380 million years ago. This method found that these ancient marine taxa were geographically distributed based on their water depth and sediment type preferences. This example is interesting because, as an additional twist, I apply an affine rotation to the ordination so that the geographic distribution of the fossils runs parallel to the environmental distribution of the fossils.
+This is a simple example from my dissertation using detrended correspondence analysis (i.e., ordination) to infer the presence of  ecological gradients in the distribution of marine organisms 380 million years ago. This method found that these ancient marine taxa rom the Hamilton Group were geographically distributed based on their water depth and sediment type preferences. This example is interesting because, as an additional twist, I apply an affine rotation to the ordination so that the geographic distribution of the fossils runs parallel to the environmental distribution of the fossils.
 
 ### example figure
+
+![Hamilton Ordination](/images/hamiltonordination.png)
+> A) An un-rotated plot of Hamilton Group DCA sample scores. The relative position of samples to each other shows how similar the sites are in taxonomic composition (i.e., the types of fossils found there.
+
+> B) A color-coded map of western (blue), central (orange), and eastern (red) New York Counties. There is a clear separation by county in the un-rotated ordination, but this geographic clustering is oblique to DCA Axis 1 and DCA Axis 2. This is because DCA Axis 1 is responding to a turbidity gradient (i.e., amount of sand in the ancient water column) and DCA Axis 2 is responding to the water depth. These two variales of water depth and turbidity are expressed in a geologically and geographically complex manner, which is why the axis of geographic variation runs obliquely to the x and y-axi sof the plot.
+
+> C) A plot of where different Hamilton fossils plot in ordination space after the ordination is rotated to align the geographic and environmental gradients
+
+> D) The qualitative depth-turbidity diagram of Brett et al. (1986), which describes the locations of characteristic taxa in terms of water depth and turbidity preference. The orientation of the rotated ordiantion scores closely matches the qualitative depth-turbidity diagram.
 
 ### further information
 + [Dissertation](https://etd.ohiolink.edu/!etd.send_file?accession=ucin1415625754&disposition=inline): My 2014 dissertation, which focused heavily on ordination methods.
