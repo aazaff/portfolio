@@ -5,7 +5,7 @@ The following is a collection of excerpts from scientific projects, educational 
 + [Quantitative Paleobiology](#quantitative-paleobiology): R, git, web APIs
 + [Paleogeographic Analyses](#paleogeographic-analyses): postGIS, R, postgreSQL, web APIs
 + [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive): R, postgreSQL, Condor (high-throughput computing)
-+ [Velociraptr Package](#r-packages-velociraptr): R, web APIs
++ [Velociraptr Package](#r-package-velociraptr): R, web APIs
 + Multivariate Fossil Analyses: R
 
 ## Quantitative Paleobiology
@@ -57,13 +57,17 @@ Our group hopes to eventually create strong cross-referenced links between scien
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
 
 ## R Package: velociraptr
-I am the author of the velociraptr package for R. It is a package designed to make downloading data from the Macrostrat and Paleobiology Database 
+I am the author of the velociraptr package for R, which is publically available on [GitHub](https://github.com/paleobiodb/paleobiodb_utilities/tree/master/velociraptr#velociraptr) and [CRAN](https://cran.r-project.org/web/packages/velociraptr/index.html). It is a package designed to make downloading data from the Macrostrat and Paleobiology Databases through their APIs easier for R users. It also includes some simple functions for quickly reshaping, cleaning, and analyzing paleontological data.
 
 ### excerpt
+This is an [example](https://github.com/aazaff/portfolio/blob/master/excerptRichness.R) using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 21 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
 
 ### example figure
+This figure depicts the history of marine biodiversity (number of unique marine organisms) throughout the history of complex animal life.
 
 ### further information
++ [Quantitative Paleobiology Course Repository](https://github.com/paleobiodb/teachPaleobiology#geoscience-541-paleobiology): Most of these functions were written for practical scientific research purposes, but others were written so my students could use them in lab assignments.
++ [quantiativeFossils](https://github.com/aazaff/quantitativeFossils.R): This is the original development repository for this package.
 
 ## Multivariate Analysis
 My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites x variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
