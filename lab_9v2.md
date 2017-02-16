@@ -7,15 +7,12 @@ Today we will be investigating the ecological impact of paleocontinent migration
 Let's take a look at the orientation of the continents today versus 66 million years ago.
 
 #### Step 1
-Load in the beta version of the velociraptr package from GitHub.
+Install and load the *velociraptr* R package from CRAn into your R environment.
 
 ````R
-# If you are an RStudio user, load the devtools package and install from github
-devtools::install_github("paleobiodb/paleobiodb_utilities",subdir="velociraptr")
-
-# If you do not use RStudio, you can source the R script directly from the beta version of the package directly
-# However, be warned that helpfiles are not included in this version. You'll need to go to the README on GitHub.
-source("https://raw.githubusercontent.com/aazaff/quantitativeFossils.R/master/communityMatrix.R")
+# Install and load the velociraptr package from CRAN
+install.packages("velociraptr")
+library("velociraptr")
 ````
 
 #### Step 2
