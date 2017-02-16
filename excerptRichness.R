@@ -65,3 +65,43 @@ GenusRichnessSQS<-t(setNames(pbsapply(GenusAbundances,velociraptr::subsampleEven
 GenusRichnessSQS<-transform(merge(t(GenusRichnessSQS),Epochs,by="row.names",all=FALSE),row.names=Row.names,Row.names=NULL)
 colnames(GenusRichnessSQS)[1]<-"GenusRichnessSQS"
 GenusRichnessSQS<-GenusRichnessSQS[order(GenusRichnessSQS[,"Midpoint"]),]
+
+#############################################################################################################
+########################################### PLOTTING FUNCTIONS, ALICE #######################################
+#############################################################################################################
+# For ploting binned richness data along the Phanerozoic time-scale
+plotBinned<-function(TimeMoments,Intervals=Epochs,VerticalLabel="index",Single=TRUE) {
+	if (Single) {par(oma=c(1.5,0.5,0.5,0),mar=c(3,3,2,0.5),mgp=c(2,0.5,0))}
+	String<-deparse(substitute(TimeMoments))
+	Title<-gsub('(?<=[a-z])(?=[A-Z])', ' ', String, perl = TRUE)
+	Maximum<-max(TimeMoments[,1])
+	Minimum<-Maximum-(Maximum-min(TimeMoments[,1]))*1.05
+	plot(y=TimeMoments[,1],x=TimeMoments[,"Midpoint"],xlim=c(541,0),ylim=c(Minimum,Maximum*1.05),ylab=VerticalLabel,xlab="millions of years ago",yaxs="i",xaxs="i",lwd=3,type="l",main=Title,cex.axis=1.25)
+	points(y=TimeMoments[,1],x=TimeMoments[,"Midpoint"],col=as.character(TimeMoments[,"color"]),pch=16,cex=2)
+	for (i in 2:nrow(Intervals)) {
+ 		rect(Intervals[i,"t_age"],min(TimeMoments[,1]),Intervals[i,"b_age"],Minimum,col=as.character(Intervals[i,"color"]))
+ 		}
+ 	}
+ 	
+# For plotting continuous time-series along the Phanerozoic time-scale
+plotContinuous<-function(TimeVector,Intervals=Epochs,VerticalLabel="index",Single=TRUE) {
+ 	if (Single) {par(oma=c(1.5,0.5,0.5,0),mar=c(3,3,2,0.5),mgp=c(2,0.5,0))}
+ 	String<-deparse(substitute(TimeVector))
+	Title<-gsub('(?<=[a-z])(?=[A-Z])', ' ', String, perl = TRUE)
+ 	Maximum<-max(TimeVector)
+	Minimum<-0-(Maximum*0.05)
+ 	plot(y=TimeVector,x=1:length(TimeVector),type="l",lwd=3,xlim=c(541,0),ylim=c(Minimum,Maximum*1.05),ylab=VerticalLabel,xlab="millions of years ago",yaxs="i",xaxs="i",main=Title,cex.axis=1.25)
+ 	for (i in 1:nrow(Intervals)) {
+		rect(Intervals[i,"t_age"],0,Intervals[i,"b_age"],Minimum,col=as.character(Intervals[i,"color"]))
+		}
+	}
+
+########################################## PLOTTING: Plotting Scripts #######################################	
+# Make a figure
+quartz(width=7,height=7)
+layout(matrix(c(1,1,2,2), 2, 2, byrow = TRUE))
+par(oma=c(1.5,0.5,0.5,0),mar=c(3,3,2,0.5),mgp=c(1.5,0.5,0))
+# Plot fragmentation Index Time-Series
+plotContinuous(GenusRichness,Epochs,"number of marine animals",Single=FALSE)
+# Plot the SQS time-series
+plotBinned(GenusRichnessSQS,Epochs,"number of marine animals",Single=FALSE)
