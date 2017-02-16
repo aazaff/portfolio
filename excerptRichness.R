@@ -62,5 +62,6 @@ GenusAbundances<-by(SkeletalEpochs[,"genus"],SkeletalEpochs[,"early_interval"],t
 GenusRichnessSQS<-t(setNames(pbsapply(GenusAbundances,velociraptr::subsampleEvenness,0.75),names(GenusAbundances)))
 
 # Bind the SQS output to the timescale data frame so that richness is mapped to a time period.
-GenusRichnessSQS<-transform(merge(as.data.frame(GenusRichnessSQS),Epochs,by="row.names",all=FALSE),row.names=Row.names,Row.names=NULL)
+GenusRichnessSQS<-transform(merge(t(GenusRichnessSQS),Epochs,by="row.names",all=FALSE),row.names=Row.names,Row.names=NULL)
+colnames(GenusRichnessSQS)[1]<-"GenusRichnessSQS"
 GenusRichnessSQS<-GenusRichnessSQS[order(GenusRichnessSQS[,"Midpoint"]),]
