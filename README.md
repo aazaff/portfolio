@@ -6,7 +6,7 @@ The following is a collection of excerpts from scientific projects, educational 
 + [Paleogeographic Analyses](#paleogeographic-analyses): postGIS, R, postgreSQL, web APIs
 + [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive): R, postgreSQL, Condor (high-throughput computing)
 + [Velociraptr Package](#r-package-velociraptr): R, web APIs
-+ Multivariate Fossil Analyses: R
++ [Multivariate Fossil Analyses](#multivariate-fossil-analyses): R
 
 ## Quantitative Paleobiology
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
@@ -74,7 +74,7 @@ This figure depicts the history of marine biodiversity (number of unique marine 
 + [Quantitative Paleobiology Course Repository](https://github.com/paleobiodb/teachPaleobiology#geoscience-541-paleobiology): Most of these functions were written for practical scientific research purposes, but others were written so my students could use them in lab assignments.
 + [quantiativeFossils](https://github.com/aazaff/quantitativeFossils.R): This is the original development repository for this package.
 
-## Multivariate Analysis
+## Multivariate Fossil Analyses
 My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites versus some measurable variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium, thorium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
 
 ### excerpt
