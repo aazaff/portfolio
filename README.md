@@ -75,13 +75,12 @@ This figure depicts the history of marine biodiversity (number of unique marine 
 + [quantiativeFossils](https://github.com/aazaff/quantitativeFossils.R): This is the original development repository for this package.
 
 ## Multivariate Analysis
-My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites x variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
+My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of sites versus some measurable variable, and group sites based on the similarity of their variables. For example, we could sample various water bodies for the presence of heavy metal pollutants (e.g., cesium, thorium), then agnostically extract similar types of pollution among the different water bodies. This is a powerful tool for both basic data exploration and hypothesis testing.
 
 ### excerpt
 This is a simple example from my dissertation using detrended correspondence analysis (i.e., ordination) to infer the presence of  ecological gradients in the distribution of marine organisms 380 million years ago. This method found that these ancient marine taxa rom the Hamilton Group were geographically distributed based on their water depth and sediment type preferences. This example is interesting because, as an additional twist, I apply an affine rotation to the ordination so that the geographic distribution of the fossils runs parallel to the environmental distribution of the fossils.
 
 ### example figure
-
 ![Hamilton Ordination](/images/hamiltonordination.png)
 > A) An un-rotated plot of Hamilton Group DCA sample scores. The relative position of samples to each other shows how similar the sites are in taxonomic composition (i.e., the types of fossils found there.
 
