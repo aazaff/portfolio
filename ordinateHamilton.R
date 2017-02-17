@@ -10,9 +10,9 @@ if (suppressWarnings(require("velociraptr"))==FALSE) {
     }
 
 # Load or install the vegan package; needed for ordination
-if (suppressWarnings(require("velociraptr"))==FALSE) {
-    install.packages("velociraptr",repos="http://cran.cnr.berkeley.edu/");
-    library("velociraptr");
+if (suppressWarnings(require("vegan"))==FALSE) {
+    install.packages("vegan",repos="http://cran.cnr.berkeley.edu/");
+    library("vegan");
     }
 
 #############################################################################################################
@@ -21,16 +21,16 @@ if (suppressWarnings(require("velociraptr"))==FALSE) {
 # No functions at this time.
 
 ############################################## Load Hamilton Datasets  ######################################
-# Load primary Hamilton Dataset
-Hamilton<-read.csv("ZaffosHamiltonData03102014PBM.csv",header=TRUE,row.names=1)
-# Conver the abundance data to presence-absence (1-presence, 0-absence)
+# Load primary Hamilton Dataset from GitHub
+Hamilton<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/ZaffosHamiltonData03102014PBM.csv",header=TRUE,row.names=1)
+# Convert the abundance data to presence-absence (1-presence, 0-absence)
 Hamilton[Hamilton>0]<-1
 
 # Cull the dataset of depauperate samples (<5 taxa) and rare taxa (<5 samples)
 Hamilton2<-velociraptr::cullMatrix(Hamilton,5,5)
 
 # Load in the Locality-to-County hash table
-Localities<-read.csv("HamiltonLocalities07312015PBM.csv",header=TRUE)
+Localities<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/HamiltonLocalityHash07312015PBM.csv",header=TRUE)
 
 # Merge the rownames with the county codes
 CodesMatrix<-cbind(rownames(Hamilton),substring(rownames(Hamilton),3,4))
