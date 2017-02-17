@@ -12,7 +12,9 @@ The following is a collection of excerpts from scientific projects, educational 
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
 
 ### excerpt
-I have forked one of the [lab assignments](https://github.com/aazaff/portfolio/blob/master/lab_9v2.md#the-migration-of-paleocontinents) from the class to this repository. It involves plotting paleogeographic maps and fossil data in R using the [Macrostrat Database](www.macrostrat.org) API, [Paleobiology Database](www.paleobiodb.org) API, and the [rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf) geospatial analysis package. A paleogeographic map is a depiction of where the continents were located n-million years ago.
+I have forked one of the lab assignments from the class to this repository. It involves plotting paleogeographic maps and fossil data in R using the [Macrostrat Database](www.macrostrat.org) API, [Paleobiology Database](www.paleobiodb.org) API, and the [rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf) geospatial analysis package. A paleogeographic map is a depiction of where the continents were located n-million years ago.
+
+**Script**: [labPaleocontinent.md](/labPaleocontinent.md#the-migration-of-paleocontinents)
 
 ### example figure
 This is one of the maps students create during the lab.
@@ -30,6 +32,8 @@ I conduct most of my geospatial analyses in [QuantumGIS](www.qgis.org) or [postG
 
 ### excerpt
 I have forked a modified version of the original [R script](https://github.com/aazaff/portfolio/blob/master/quantifyPlate.RV2) from our lab group's private repository to here. This script ingests the original shapefiles and calculates various metrics about the Earth's former paleogeographic state. This includes, for example, the changing distance between pairs of tectonic plates through time. 
+
+**Script**: [quantifyPlate.R](/quantifyPlate.R)
 
 **NOTE: This script will not run without the original datafiles.** It is only included as a demonstration of how R can be used to interact with postGIS.
 
@@ -60,7 +64,9 @@ Our group hopes to eventually create strong cross-referenced links between scien
 I authored the velociraptr package for R, which is publically available on [GitHub](https://github.com/paleobiodb/paleobiodb_utilities/tree/master/velociraptr#velociraptr) and [CRAN](https://cran.r-project.org/web/packages/velociraptr/index.html). It is a package designed to make downloading data from the Macrostrat and Paleobiology Database APIs easier for R users. It also includes functions for quickly reshaping, cleaning, and analyzing paleontological data.
 
 ### excerpt
-This is an [example](https://github.com/aazaff/portfolio/blob/master/excerptRichness.R) using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 21 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
+This is an example script using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 21 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
+
+**Script**: [excerptRichness.R](\excerptRichness.R)
 
 ### example figure
 This figure depicts the history of marine biodiversity (number of unique marine organisms) throughout the history of complex animal life.
@@ -82,7 +88,7 @@ In this example, we start with a multivariate dataset where each row is a sample
 ### excerpt
 This is an excerpt from my dissertation using [detrended correspondence analysis](https://github.com/paleobiodb/teachPaleobiology/blob/master/LabExercise4.md#lab-exercise-4) (i.e., ordination) to infer the presence of  ecological gradients in the distribution of marine organisms 380 million years ago. This analysis found that ancient marine animals from New York were geographically and environmentally distributed based on their water depth and sediment type preferences. 
 
-**NOTE: This script will not run without the original datafiles.** It is only included as a demonstration of how R can be used to perform multivariate analyses.
+**Script**: [ordinateHamilton.R](\ordinateHamilton.R)
 
 ### example figure
 Ancient fossil-bearing marine sediments deposited in New York ~380 million years ago follow an unsual geographic distribution. Sediments near the Finger Lakes region of central New York were deposited in very deep water, and are bracketed to the east and west by sediments from shallower-water environments. There was a tropical reef like environment to the west (near modern day Buffalo), and a sandy beach environment to the east (past Syracuse). This figures illustrates how DCA can be used to understand the distribution of different species in this complex geographic and environmental context.
