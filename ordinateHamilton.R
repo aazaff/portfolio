@@ -27,7 +27,7 @@ Hamilton<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CS
 Hamilton[Hamilton>0]<-1
 
 # Cull the dataset of depauperate samples (<5 taxa) and rare taxa (<5 samples)
-Hamilton2<-velociraptr::cullMatrix(Hamilton,5,5)
+HamiltonCull<-velociraptr::cullMatrix(Hamilton,5,5)
 
 # Load in the Locality-to-County hash table
 Localities<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/HamiltonLocalityHash07312015PBM.csv",header=TRUE)
@@ -36,14 +36,14 @@ Localities<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/
 CodesMatrix<-cbind(rownames(Hamilton),substring(rownames(Hamilton),3,4))
 colnames(CodesMatrix)<-c("Samples","Code")
 CodesMatrix<-merge(CodesMatrix,Localities,by="Code",all=TRUE)
-CodesMatrix<-subset(CodesMatrix,is.na(CodesMatrix[,"Samples"])!=TTRUE) # Remove NA's
+CodesMatrix<-subset(CodesMatrix,is.na(CodesMatrix[,"Samples"])!=TRUE) # Remove NA's
 rownames(CodesMatrix)<-CodesMatrix[,"Samples"]
 
 # Do the same for the Brett and Baird (1983) sample codes, which use a different labeling system
 CodesMatrixBB<-cbind(rownames(Hamilton),substring(rownames(Hamilton),3,6))
 colnames(CodesMatrixBB)<-c("Samples","Code")
-CodesMatrixBB<-merge(CodesMatrixBB,Localities,by="Code",all=T)
-CodesMatrixBB<-subset(CodesMatrixBB,is.na(CodesMatrixBB[,"Samples"])!=T)
+CodesMatrixBB<-merge(CodesMatrixBB,Localities,by="Code",all=TRUE)
+CodesMatrixBB<-subset(CodesMatrixBB,is.na(CodesMatrixBB[,"Samples"])!=TRUE)
 rownames(CodesMatrixBB)<-CodesMatrixBB[,"Samples"]
 CodesMatrixBB<-na.omit(CodesMatrixBB)
 
@@ -53,7 +53,7 @@ CodesMatrix<-rbind(CodesMatrix,CodesMatrixBB)
 
 # Remove the Pennsylvania data that does not belong in this analysis of New York
 Pennsylvania<-subset(CodesMatrix,CodesMatrix[,"County"]=="PENNSYLVANIA")
-Hamilton2<-subset(Hamilton2,rownames(Hamilton2)%in%rownames(Pennsylvania)!=TRUE)
+HamiltonCull<-subset(HamiltonCull,rownames(HamiltonCull)%in%rownames(Pennsylvania)!=TRUE)
 
 #############################################################################################################
 ####################################### ORDINATION FUNCTIONS, Hamilton ######################################
@@ -72,7 +72,7 @@ rotateMatrix <- function(CommunityMatrix, Theta) {
 
 # Rotate Hamilton Data by so that the axis of greatest taxonomic variation is parallel to the east-west 
 # geographic location of New York Counties
-rotateHamilton<-function(SampleScores,CodesMatrix=CodesMatrix) {
+rotateSamples<-function(SampleScores,CodesMatrix=CodesMatrix) {
 	# Merge the Scores and hash table
 	SampleCodes<-merge(SampleScores,CodesMatrix,by="row.names")
 	
@@ -93,21 +93,36 @@ rotateHamilton<-function(SampleScores,CodesMatrix=CodesMatrix) {
 	return(RotatedSamples)
 	}
 
+# Find the position of each species along the inferred gradient of the rotated ordination
+# Take the average sample score of all samples each species is present in
+rotateSpecies<-function(RotatedSampleScores,OriginalData) {
+	# Find which samples each taxon is present in according to the original contingency table
+	PresentSamples<-apply(OriginalData,2,function(x) names(which(x>0)))
+	# Find the average score of all samples each taxon is present in
+	Axis1Scores<-sapply(PresentSamples,function(x,y) mean(y[x,"Axis1"]),RotatedSampleScores)
+	Axis2Scores<-sapply(PresentSamples,function(x,y) mean(y[x,"Axis2"]),RotatedSampleScores)
+	# Bind and save the data
+	FinalMatrix<-cbind(Axis1Scores,Axis2Scores)
+	return(FinalMatrix)
+	}
+
 ######################################### Perform Rotated Hamilton  #########################################
 # Perform detrended correspondence analysis
-HamiltonDCA<-decorana(Hamilton2)
+HamiltonDCA<-decorana(HamiltonCull)
 HamiltonScores<-scores(HamiltonDCA,display="sites")
 # Merge the scores with the lookup table
 HamiltonUnrotated<-merge(HamiltonScores,CodesMatrix,by="row.names")
 
 # Rotate the scores so that the x-axis is aligned with the geographic axis
-RotatedHamilton<-rotateHamilton(HamiltonScores,CodesMatrix)
-HamiltonParams<-calcParams(RotatedHamilton,Hamilton2)
-colnames(HamiltonParams)<-c("HamiltonPE1","HamiltonET1","HamiltonPA1","HamiltonPE2","HamiltonET2","HamiltonPA2")
-# Save copy for plot
-RotatedHamiltonParams<-HamiltonParams
+RotatedSampleScores<-rotateSamples(HamiltonScores,CodesMatrix)
+RotatedSpeciesScores<-rotateSpecies(RotatedSampleScores,HamiltonCull)
 
 ############################################## Plotting Script ##############################################
+# Make a figure
+quartz(width=10,height=5)
+layout(matrix(c(1,2), 1, 2, byrow = TRUE))
+par(oma=c(1.5,0.5,0.5,0),mar=c(3,3,2,0.5),mgp=c(1.5,0.5,0))
+
 # Visualize the sample scores
 # Separate the points out by county so they can be plotted by different colors
 Countyless<-subset(HamiltonUnrotated,HamiltonUnrotated$County!="Madison" | HamiltonUnrotated$County!="Onondaga" | HamiltonUnrotated$County!="Chenango" | HamiltonUnrotated$County!="Erie" | HamiltonUnrotated$County!="Genesee" | HamiltonUnrotated$County!="Livingston" | HamiltonUnrotated$County=="Cayuga" | HamiltonUnrotated$County=="Seneca")
@@ -115,13 +130,13 @@ EasternCounties<-subset(HamiltonUnrotated,HamiltonUnrotated$County=="Madison" | 
 WesternCounties<-subset(HamiltonUnrotated,HamiltonUnrotated$County=="Erie" | HamiltonUnrotated$County=="Genesee" | HamiltonUnrotated$County=="Livingston")
 CentralCounties<-subset(HamiltonUnrotated,HamiltonUnrotated$County=="Cayuga" | HamiltonUnrotated$County=="Seneca")
 # Make an initial plot
-plot(x=HamiltonUnrotated[,2],y=HamiltonUnrotated[,3],type="n",las=1,xlab="DCA Axis 1",ylab="DCA Axis 2")
-points(x=Countyless[,2],y=Countyless[,3],pch=16,col="grey") # Add points from misc. counties
-points(EasternCounties[,2],EasternCounties[,3],pch=16,col="#f3676f") # Add eastern counties
-points(WesternCounties[,2],WesternCounties[,3],pch=16,col="#77cee3") # Add western counties
-points(CentralCounties[,2],CentralCounties[,3],pch=16,col="#f3a567") # Add central counties
+plot(x=HamiltonUnrotated[,"DCA1"],y=HamiltonUnrotated[,"DCA2"],type="n",las=1,xlab="DCA Axis 1",ylab="DCA Axis 2")
+points(x=Countyless[,"DCA1"],y=Countyless[,"DCA2"],pch=16,col="grey",cex=1.5) # Add points from misc. counties
+points(EasternCounties[,"DCA1"],EasternCounties[,"DCA2"],pch=16,col="#f3676f",cex=1.5) # Add eastern counties
+points(WesternCounties[,"DCA1"],WesternCounties[,"DCA2"],pch=16,col="#77cee3",cex=1.5) # Add western counties
+points(CentralCounties[,"DCA1"],CentralCounties[,"DCA2"],pch=16,col="#f3a567",cex=1.5) # Add central counties
 
 # Visualize the rotated species scores
 # Save a blank space for the counties map - added in later through illustrator
-plot(RotatedHamiltonParams[,1],RotatedHamiltonParams[,4],pch=16,col="grey",las=1,xlab="DCA Axis 1",ylab="DCA Axis 2")
-text(RotatedHamiltonParams[,1],RotatedHamiltonParams[,4],rownames(RotatedHamiltonParams))
+plot(RotatedSpeciesScores[,"Axis1Scores"],RotatedSpeciesScores[,"Axis2Scores"],pch=16,col="grey",las=1,xlab="DCA Axis 1",ylab="DCA Axis 2",cex=1.5)
+# text(RotatedSpeciesScores[,"Axis1Scores"],RotatedSpeciesScores[,"Axis2Scores"],rownames(RotatedSpeciesScores))
