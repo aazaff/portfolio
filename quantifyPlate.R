@@ -2,9 +2,12 @@
 # Dependency functions are not embedded in master functions
 # []-notation is used wherever possible, and $-notation is avoided.
 
-######################################### Load Required Libraries ###########################################
+######################################### Initial Configuration #############################################
 # Load Required Libraries
-library("RPostgreSQL")
+if (suppressWarnings(require("RPostgreSQL"))==FALSE) {
+    install.packages("RPostgreSQL",repos="http://cran.cnr.berkeley.edu/");
+    library("RPostgreSQL");
+    }
 
 # Establish postgresql connection.
 Driver<-dbDriver("PostgreSQL") # Establish database driver
