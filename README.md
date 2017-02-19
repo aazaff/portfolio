@@ -1,17 +1,23 @@
 # Portfolio
 The following is a collection of excerpts from scientific projects, educational resources, and programming scripts developed by [Dr. Andrew Zaffos](www.azstrata.org). Some examples have been edited from their original versions to protect proprietary information or ongoing research.
 
-### table of contents
-+ [Quantitative Paleobiology](#quantitative-paleobiology): R, git, web APIs
-+ [Paleogeographic Analyses](#paleogeographic-analyses): postGIS, R, postgreSQL, web APIs
-+ [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive): R, postgreSQL, Condor (high-throughput computing)
-+ [Velociraptr Package](#r-package-velociraptr): R, web APIs
-+ [Multivariate Fossil Analyses](#multivariate-fossil-analyses): R
-
-## Quantitative Paleobiology
+## Table of Contents
+###[Quantitative Paleobiology](#quantitative-paleobiology-excerpt): R, git, web APIs
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
 
-### excerpt
+### [Paleogeographic Analyses](#paleogeographic-analyses-excerpt): postGIS, R, postgreSQL, web APIs
+I conduct most of my geospatial analyses in [QuantumGIS](www.qgis.org) or [postGIS](http://www.postgis.net/). This is an example of some R scripts I wrote to clean and analyze paleogeographic maps from the [EarthByte](www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and postGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
+
+### [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive-demo): R, postgreSQL, Condor (high-throughput computing)
+Fifty percent of my current appointment is funded by the [GeoDeepDive Database](https://geodeepdive.org/) initiative. GeoDeepDive is a digital library of scientific documents (e.g., articles, books, reports). We take these documents from our publishing partners (e.g., Elsevier, Wiley,Taylor & Francis) and process them into data analyzable products: natural language processing (NLP), optical character recognition (OCR), and sophisticated elasticsearch tuples for various dictionary terms (e.g., documents mentioning certain countries, minerals, or organisms). Many of our applications need to run on the [CHTC](http://chtc.cs.wisc.edu/) high-throughput computing infrastructure because of the size of the GeoDeepDive corpus ~10TB.
+
+### [Velociraptr Package](#r-package-velociraptr-demo): R, web APIs
+I authored the velociraptr package for R, which is publically available on [GitHub](https://github.com/paleobiodb/paleobiodb_utilities/tree/master/velociraptr#velociraptr) and [CRAN](https://cran.r-project.org/web/packages/velociraptr/index.html). It is a package designed to make downloading data from the Macrostrat and Paleobiology Database APIs easier for R users. It also includes functions for quickly reshaping, cleaning, and analyzing paleontological data.
+
+### [Multivariate Fossil Analyses](#multivariate-fossil-analyses-demo): R
+My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of samples with multiple characteristics (i.e., multiple variables), and group sites based on the similarity of the observed characteristics. They allow you to visualize or quantify the similarity of samples to each other based on multiple variables.
+
+## Quantitative Paleobiology Excerpt
 I have forked one of the lab assignments from the class to this repository. It involves plotting paleogeographic maps and fossil data in R using the [Macrostrat Database](www.macrostrat.org) API, [Paleobiology Database](www.paleobiodb.org) API, and the [rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf) geospatial analysis package. A paleogeographic map is a depiction of where the continents were located n-million years ago.
 
 **Script**: [labPaleocontinent.md](/labPaleocontinent.md#the-migration-of-paleocontinents)
@@ -27,10 +33,7 @@ This is one of the maps students create during the lab.
 + [R Tutorial](https://github.com/aazaff/startLearn.R/blob/master/README.md#an-introduction-to-r): A lengthy R tutorial covering beginner, intermediate, advanced, and expert level topics in R.
 + [GitHub Tutorial](https://github.com/paleobiodb/teachPaleobiology/blob/master/GitTutorial/gitTutorial.md#introduction): A simple GitHub tutorial used to teach students how to create a GitHub account and repository, and how to pull and push to the repo.
 
-## Paleogeographic Analyses
-I conduct most of my geospatial analyses in [QuantumGIS](www.qgis.org) or [postGIS](http://www.postgis.net/). This is an example of some R scripts I wrote to clean and analyze paleogeographic maps from the [EarthByte](www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and postGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications (see below) and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
-
-### excerpt
+## Paleogeographic Analyses Excerpt
 I have forked a modified version of the original [R script](https://github.com/aazaff/portfolio/blob/master/quantifyPlate.RV2) from our lab group's private repository to here. This script ingests the original shapefiles and calculates various metrics about the Earth's former paleogeographic state. This includes, for example, the changing distance between pairs of tectonic plates through time. 
 
 **Script**: [quantifyPlate.R](/quantifyPlate.R)
@@ -49,10 +52,7 @@ This is an example of how the maps and geographic indices created by the above R
 + [Macrostrat Database Paleogeography](www.macrostrat.org/api/paleogeography) These maps can be accessed using the Macrostrat Database's paleogeography route.
 + [Paleobiology Database Navigator](www.paleobiodb.org/navigator) These maps underlie the paleogeographic maps in the Paleobiology Database's data visualization tool.
 
-## Text Mining in Geodeepdive
-Fifty percent of my current appointment is funded by the [GeoDeepDive Database](https://geodeepdive.org/) initiative. GeoDeepDive is a digital library of scientific documents (e.g., articles, books, reports). We take these documents from our publishing partners (e.g., Elsevier, Wiley,Taylor & Francis) and process them into data analyzable products: natural language processing (NLP), optical character recognition (OCR), and sophisticated elasticsearch tuples for various dictionary terms (e.g., documents mentioning certain countries, minerals, or organisms).
-
-### excerpt
+## Text Mining in Geodeepdive Demo
 I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that attempts to match references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. 
 
 Our group hopes to eventually create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System]((https://www.iobis.org/)). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
@@ -63,10 +63,7 @@ Our group hopes to eventually create strong cross-referenced links between scien
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
 + [ePANDDA](https://steppe.org/epandda/): A brief description of the ePANDDA working group, which is an affiliate of this project.
 
-## R Package: velociraptr
-I authored the velociraptr package for R, which is publically available on [GitHub](https://github.com/paleobiodb/paleobiodb_utilities/tree/master/velociraptr#velociraptr) and [CRAN](https://cran.r-project.org/web/packages/velociraptr/index.html). It is a package designed to make downloading data from the Macrostrat and Paleobiology Database APIs easier for R users. It also includes functions for quickly reshaping, cleaning, and analyzing paleontological data.
-
-### excerpt
+## R Package: velociraptr Demo
 This is an example script using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 21 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
 
 **Script**: [excerptRichness.R](\excerptRichness.R)
@@ -83,13 +80,8 @@ This figure depicts the history of marine biodiversity (number of unique marine 
 + [Quantitative Paleobiology Course Repository](https://github.com/paleobiodb/teachPaleobiology#geoscience-541-paleobiology): Most of these functions were written for practical scientific research purposes. Some were written for my students to use in lab assignments.
 + [quantiativeFossils](https://github.com/aazaff/quantitativeFossils.R): This is the original development repository for this package.
 
-## Multivariate Fossil Analyses
-My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of samples with multiple characteristics (i.e., multiple variables), and group sites based on the similarity of the observed characteristics. They allow you to visualize or quantify the similarity of samples to each other based on multiple variables.
-
-In this example, we start with a multivariate dataset where each row is a sample from a different geographic location (a site) and each column represents the abundance of a particular species at that site. We use [detrended correspondence analysis](https://github.com/paleobiodb/teachPaleobiology/blob/master/LabExercise4.md#lab-exercise-4) to measure how similar different samples are to each other based on their constituent species or how similar different species are to each other based on shared geographic distribution. 
-
-### excerpt
-This is an excerpt from my dissertation using [detrended correspondence analysis](https://github.com/paleobiodb/teachPaleobiology/blob/master/LabExercise4.md#lab-exercise-4) (i.e., ordination) to infer the presence of  ecological gradients in the distribution of marine organisms 380 million years ago. This analysis found that ancient marine animals from New York were geographically and environmentally distributed based on their water depth and sediment type preferences. 
+## Multivariate Fossil Analyses Demo
+In this example, we start with a multivariate dataset where each row is a sample from a different geographic location (a site) and each column represents the abundance of a particular species at that site. We use [detrended correspondence analysis](https://github.com/paleobiodb/teachPaleobiology/blob/master/LabExercise4.md#lab-exercise-4) to measure how similar different samples are to each other based on their constituent species or how similar different species are to each other based on shared geographic distribution. This is an excerpt from my dissertation using detrended correspondence analysis to quantify the presence of ecological gradients in the distribution of marine organisms 380 million years ago. This analysis found that ancient marine animals from New York were geographically and environmentally distributed based on their water depth and sediment type preferences. 
 
 **Script**: [ordinateHamilton.R](\ordinateHamilton.R)
 
