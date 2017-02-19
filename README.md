@@ -64,7 +64,7 @@ Our group hopes to eventually create strong cross-referenced links between scien
 + [ePANDDA](https://steppe.org/epandda/): A brief description of the ePANDDA working group, which is an affiliate of this project.
 
 ## R Package: velociraptr Demo
-This is an example script using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 21 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
+This is an example script using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 34 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
 
 **Script**: [excerptRichness.R](\excerptRichness.R)
 
