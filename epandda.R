@@ -1,4 +1,3 @@
-
 # Custom functions are camelCase. Arrays, parameters, and arguments are PascalCase
 # Dependency functions are not embedded in master functions, and are marked with the flag dependency in the documentation
 # []-notation is used wherever possible, and $-notation is avoided.
@@ -63,6 +62,10 @@ PBDBRefs[,"pbdb_pubtitle"]<-as.character(PBDBRefs[,"pbdb_pubtitle"])
 # Remove PBDB Refs with no title
 PBDBRefs<-subset(PBDBRefs,nchar(PBDBRefs[,"pbdb_title"])>2)
 
+# Pull out only the needed columns and rename them to match GDDRefs
+PBDBRefs<-PBDBRefs[,c("reference_no","author1last","pubyr","reftitle","pubtitle")]
+colnames(PBDBRefs)<-c("pbdb_no","pbdb_author","pbdb_year","pbdb_title","pbdb_pubtitle")
+
 # Download the bibjson files from the GeoDeepDive API
 # Because GDD contains several million documents, and this is only an example, we only download gdd documents
 # Where the publication name holds some similarity to the string "Paleontology"
@@ -86,8 +89,6 @@ gdd_publisher<-parSapply(Cluster,GDDRefs,function(x) x[["publisher"]])
  
 # Create identically formatted data.frames for geodeepdive and pbdb references (overwrite GDDRefs)
 GDDRefs<-as.data.frame(cbind(gdd_id,gdd_author,gdd_year,gdd_title,gdd_pubtitle, gdd_publisher),stringsAsFactors=FALSE)
-PBDBRefs<-PBDBRefs[,c("reference_no","author1last","pubyr","reftitle","pubtitle")]
-colnames(PBDBRefs)<-c("pbdb_no","pbdb_author","pbdb_year","pbdb_title","pbdb_pubtitle")
     
 # Change data types of DDRefs to appropriate types
 GDDRefs[,"gdd_id"]<-as.character(GDDRefs[,"gdd_id"])
