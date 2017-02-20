@@ -3,10 +3,10 @@ The following is a collection of excerpts from scientific projects, educational 
 
 ## Table of Contents
 ###[Quantitative Paleobiology](#quantitative-paleobiology-excerpt): R, git, web APIs
-I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
+I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](https://www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
 
 ### [Paleogeographic Analyses](#paleogeographic-analyses-excerpt): PostGIS, R, PostgreSQL, web APIs
-I conduct most of my geospatial analyses in [QGIS](www.qgis.org) or [PostGIS](http://www.postgis.net/). This is an example of some R scripts I wrote to clean and analyze paleogeographic maps from the [EarthByte](www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and PostGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
+I conduct most of my geospatial analyses in [QGIS](https://www.qgis.org) or [PostGIS](http://www.postgis.net/). This is an example of some R scripts I wrote to clean and analyze paleogeographic maps from the [EarthByte](https://www.earthbyte.org) paleocoordinate rotation model using the RPostgreSQL package and PostGIS. They are a port/refactor of deprecated python/SQL code written by [John Czaplewski](https://github.com/UW-Macrostrat/alice). These maps and data products underlie several of our group's web applications and are also an important part of our paper currently under review at the Proceedings of the National Academy of Sciences.
 
 ### [Text Mining in GeoDeepDive](#text-mining-in-geodeepdive-demo): R, PostgreSQL, Condor (high-throughput computing)
 Fifty percent of my current appointment is funded by the [GeoDeepDive](https://geodeepdive.org/) initiative. GeoDeepDive is a digital library of scientific documents (e.g., articles, books, reports). We take these documents from our publishing partners (e.g., Elsevier, Wiley,Taylor & Francis) and process them into data analyzable products: natural language processing (NLP), optical character recognition (OCR), and sophisticated elasticsearch tuples for various dictionary terms (e.g., documents mentioning certain countries, minerals, or organisms). Many of our applications need to run on the [CHTC](http://chtc.cs.wisc.edu/) high-throughput computing infrastructure because of the size of the GeoDeepDive corpus (>2.5 million documents; 10TB and growing).
@@ -18,7 +18,7 @@ I authored the velociraptr package for R, which is publically available on [GitH
 My specialty in ecology is multivariate anlaysis (e.g., ordination, cluster analysis, principal components analysis). These methods take contingency tables of samples with multiple characteristics (i.e., multiple variables), and group sites based on the similarity of the observed characteristics. They allow you to visualize or quantify the similarity of samples to each other based on multiple variables.
 
 ## Quantitative Paleobiology Excerpt
-I have forked one of the lab assignments from the class to this repository. It involves plotting paleogeographic maps and fossil data in R using the [Macrostrat Database](www.macrostrat.org) API, [Paleobiology Database](www.paleobiodb.org) API, and the [rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf) geospatial analysis package. A paleogeographic map is a depiction of where the continents were located n-million years ago.
+I have forked one of the lab assignments from the class to this repository. It involves plotting paleogeographic maps and fossil data in R using the [Macrostrat Database](https://www.macrostrat.org) API, [Paleobiology Database](https://www.paleobiodb.org) API, and the [rgdal](https://cran.r-project.org/web/packages/rgdal/rgdal.pdf) geospatial analysis package. A paleogeographic map is a depiction of where the continents were located n-million years ago.
 
 **Script**: [labPaleocontinent.md](/labPaleocontinent.md#the-migration-of-paleocontinents)
 
@@ -26,7 +26,7 @@ I have forked one of the lab assignments from the class to this repository. It i
 This is one of the maps students create during the lab.
 
 ![Paleocontinent Image](/images/Alice.png)
-> A graphic of paleocontinent orientations in the Albian (110 mya; green), Masstrichtian (66 mya; blue), and present (red), using [Macrostrat's](www.macrostrat.org) implementation of the [GPlates](www.gplates.org) rotation model in R.
+> A graphic of paleocontinent orientations in the Albian (110 mya; green), Masstrichtian (66 mya; blue), and present (red), using [Macrostrat's](https://www.macrostrat.org) paleogeographic maps.
 
 ### further information
 + [Course GitHub Repository](https://github.com/paleobiodb/teachPaleobiology#geoscience-541-paleobiology): The courses main page (readme) has links to the syllabus, lectures, lab assignments, reading assignments, writing assignments, GitHub tutorial, and R tutorial.
@@ -34,7 +34,7 @@ This is one of the maps students create during the lab.
 + [GitHub Tutorial](https://github.com/paleobiodb/teachPaleobiology/blob/master/GitTutorial/gitTutorial.md#introduction): A simple GitHub tutorial used to teach students how to create a GitHub account and repository, and how to pull and push to the repo.
 
 ## Paleogeographic Analyses Excerpt
-I have forked a modified version of the original [R script](https://github.com/aazaff/portfolio/blob/master/quantifyPlate.RV2) from our lab group's private repository to here. This script ingests the original shapefiles and calculates various metrics about the Earth's former paleogeographic state. This includes, for example, the changing distance between pairs of tectonic plates through time. 
+I have forked a modified version of the original [R script](https://github.com/aazaff/portfolio/blob/master/quantifyPlate.R) from our lab group's private repository to here. This script ingests the original shapefiles and calculates various metrics about the Earth's former paleogeographic state. This includes, for example, the changing distance between pairs of tectonic plates through time. 
 
 **Script**: [quantifyPlate.R](/quantifyPlate.R)
 
@@ -49,10 +49,10 @@ This is an example of how the maps and geographic indices created by the above R
 > Bottom - The history of continental fragmentation over the history of complex animal life. It initially rises in response to the breakup of the Proterozoic supercontinent of Rodinia, then falls again as the continents re-aggregate into the supercontinent Pangaea. The index rebounds as Pangaea begins to fracture. A Phanerozoic high is reached when the southern paleocontinent of Gondwana fragments into South America, Africa, Antarctica, Australia, and the subcontinent of India. The index downturns again towards the present-day as India collides with Asia to form the Himalayas and Africa begins to close the Mediterranean. 
 
 ### further information
-+ [Macrostrat Database Paleogeography](www.macrostrat.org/api/paleogeography) These maps can be accessed using the Macrostrat Database's paleogeography route.
-+ [Paleobiology Database Navigator](www.paleobiodb.org/navigator) These maps underlie the paleogeographic maps in the Paleobiology Database's data visualization tool.
++ [Macrostrat Database Paleogeography](https://www.macrostrat.org/api/paleogeography) These maps can be accessed using the Macrostrat Database's paleogeography route.
++ [Paleobiology Database Navigator](https://www.paleobiodb.org/navigator) These maps underlie the paleogeographic maps in the Paleobiology Database's data visualization tool.
 
-## Text Mining in Geodeepdive Demo
+## Text Mining in GeoDeepDive Demo
 I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that attempts to match references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. 
 
 Our group hopes to eventually create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System]((https://www.iobis.org/)). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
