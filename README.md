@@ -55,20 +55,16 @@ This is an example of how the maps and geographic indices created by the above R
 + [Paleobiology Database Navigator](https://www.paleobiodb.org/navigator) These maps underlie the paleogeographic maps in the Paleobiology Database's data visualization tool.
 
 ## Text Mining in GeoDeepDive Demo
-I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that attempts to match references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. 
+I generally take these products and analyze them to produce scientific results, but also use text-mining for infrastructure building purposes. Here is a fairly simple R script written with my intern, [Erika Ito](https://github.com/ItoErika), that matches references in the Paleobiology Database with scientific documents in the GeoDeepDive corpus. We first determine the similarity of title, authorship, year, and publication between candidate references, then build a [multiple linear logistic regression model](http://www.ats.ucla.edu/stat/r/dae/logit.htm) that assigns a probability to the match. 
 
 Our group hopes to eventually create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System](https://www.iobis.org/). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
 
 **Script**: [epandda.R](\epandda.R)
 
-### example figure
-This figure is a schematic of GeoDeepDive products. It is included in our upcoming paper on GeoDeepDive at *EOS*.
-
-![EOS Figure](/images/modifiedeosfigure.png)
-
 ### further information
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
 + [ePANDDA](https://steppe.org/epandda/): A brief description of the ePANDDA working group, which is an affiliate of this project.
++ [Stanford NLP](http://nlp.stanford.edu/): Our primary natural language processing tool.
 
 ## R Package: velociraptr Demo
 This is an example script using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 34 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
