@@ -1,6 +1,8 @@
 # Portfolio
 The following is a collection of excerpts from scientific projects, educational resources, and programming scripts developed by [Dr. Andrew Zaffos](http://www.azstrata.org). Some examples have been edited from their original versions to protect proprietary information or ongoing research.
 
+Copies of my [***résumé***](/resume/main.pdf) and [***curriculum vitae***](/cv/resume.pdf) are also included in this repository.
+
 ## Table of Contents
 ###[Quantitative Paleobiology](#quantitative-paleobiology-excerpt): R, git, web APIs
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](https://www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
@@ -58,6 +60,11 @@ I generally take these products and analyze them to produce scientific results, 
 Our group hopes to eventually create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System](https://www.iobis.org/). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
 
 **Script**: [epandda.R](\epandda.R)
+
+### example figure
+This figure is a schematic of GeoDeepDive products. It is included in our upcoming paper on GeoDeepDive at *EOS*.
+
+![EOS Figure](/images/modifiedeosfigure.png)
 
 ### further information
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
