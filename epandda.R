@@ -133,6 +133,15 @@ colnames(InitialMatches)<-c("pbdb_no","gdd_id","title_sim")
 # Merge initial matches, pbdb refs, and gdd refs
 InitialMatches<-merge(InitialMatches,GDDRefs,by="gdd_id",all.x=TRUE)
 InitialMatches<-merge(InitialMatches,PBDBRefs,by="pbdb_no",all.x=TRUE)
+
+# Bind Title Similarity with pbdb_no
+InitialMatches<-cbind(PBDBRefs[,"pbdb_no"],TitleSimilarity)
+InitialMatches[,"V1"]<-GDDRefs[InitialMatches[,"V1"],"gdd_id"]
+colnames(InitialMatches)<-c("pbdb_no","gdd_id","title_sim")
+
+# Merge initial matches, pbdb refs, and gdd refs
+InitialMatches<-merge(InitialMatches,GDDRefs,by="gdd_id",all.x=TRUE)
+InitialMatches<-merge(InitialMatches,PBDBRefs,by="pbdb_no",all.x=TRUE)    
     
 #############################################################################################################
 ########################################## MATCH FIELDS, EPANDDA ############################################
@@ -161,7 +170,7 @@ MatchReferences<-parApply(Cluster, InitialMatches, 1, matchAdditional)
 stopCluster(Cluster)
 
 # Reformat MatchReferences
-MatchReferences<-as.data.frame(t(MatchReferences))
+MatchReferences<-as.data.frame(t(MatchReferences),stringsAsFactors=FALSE)
       
 #############################################################################################################
 ########################################## MODEL BUILDLING, EPANDDA #########################################
@@ -169,9 +178,14 @@ MatchReferences<-as.data.frame(t(MatchReferences))
 # No functions at this time
 
 ############################################# Model Building Script #########################################
-
+# Fix the data types for MatchReferences to match the Training Set
+MatchReferences[,"title_sim"]<-as.numeric(MatchReferences[,"title_sim"])
+MatchReferences[,"pubtitle_sim"]<-as.numeric(MatchReferences[,"pubtitle_sim"])
+MatchReferences[,"author_in"]<-as.logical(MatchReferences[,"author_in"])
+MatchReferences[,"year_match"]<-as.logical(MatchReferences[,"year_match"])
+    
 # Upload a training set of manually scored correct and false matches
-TrainingSet<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/learning_set.csv")
+TrainingSet<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/learning_set.csv",stringsAsFactors=FALSE)
 
 # Check the plausible regression models
 Model1<-glm(Match~title_sim,family="binomial",data=TrainingSet)
@@ -181,3 +195,6 @@ Model4<-glm(Match~title_sim+author_in+year_match+pubtitle_sim,family="binomial",
 
 # Make predictions from the basic set
 Probabilities<-round(predict(Model4,MatchReferences,type="response"),4)
+    
+# Make a table of the probabilities of matches
+table(Probabilities)
