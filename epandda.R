@@ -52,6 +52,10 @@ options(timeout=300)
 GotURL<-RCurl::getURL("https://paleobiodb.org/data1.2/colls/refs.csv?all_records")
 PBDBRefs<-read.csv(text=GotURL,header=TRUE)
 
+# Pull out only the needed columns and rename them to match GDDRefs
+PBDBRefs<-PBDBRefs[,c("reference_no","author1last","pubyr","reftitle","pubtitle")]
+colnames(PBDBRefs)<-c("pbdb_no","pbdb_author","pbdb_year","pbdb_title","pbdb_pubtitle")
+
 # Change data types of PBDBRefs to appropriate types
 PBDBRefs[,"pbdb_no"]<-as.numeric(as.character(PBDBRefs[,"pbdb_no"]))
 PBDBRefs[,"pbdb_author"]<-as.character(PBDBRefs[,"pbdb_author"])
@@ -61,10 +65,6 @@ PBDBRefs[,"pbdb_pubtitle"]<-as.character(PBDBRefs[,"pbdb_pubtitle"])
 
 # Remove PBDB Refs with no title
 PBDBRefs<-subset(PBDBRefs,nchar(PBDBRefs[,"pbdb_title"])>2)
-
-# Pull out only the needed columns and rename them to match GDDRefs
-PBDBRefs<-PBDBRefs[,c("reference_no","author1last","pubyr","reftitle","pubtitle")]
-colnames(PBDBRefs)<-c("pbdb_no","pbdb_author","pbdb_year","pbdb_title","pbdb_pubtitle")
 
 # Download the bibjson files from the GeoDeepDive API
 # Because GDD contains several million documents, and this is only an example, we only download gdd documents

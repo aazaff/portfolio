@@ -1,0 +1,324 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{deedy-resume-openfont}
+\definecolor{genetics}{RGB}{54,117,174}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    pdfborder={0 0 0},
+    allcolors=genetics,
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{Andrew}{Zaffos}{Developer | Data Scientist | Geologist \\
+\href{mailto:aazaff@gmail.com}{aazaff@gmail.com} | 201.925.6688
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education} 
+
+\subsection{William \& Mary}
+\descript{B.A. Economics 2008}
+%\location{Expected Dec 2014 | Ithaca, NY \\ Cum. GPA: N/A}
+\sectionsep
+
+\subsection{University of Georgia}
+\descript{M.S. Geology 2010}
+%\location{Expected Dec 2014 | Ithaca, NY \\ Cum. GPA: N/A}
+\sectionsep
+
+\subsection{University of Cincinnati}
+\descript{Ph.D. Geology 2014}
+%\location{Expected Dec 2014 | Ithaca, NY \\ Cum. GPA: N/A}
+\sectionsep
+
+%\descript{BS in Computer Science}
+%\location{Expected May 2014 | Ithaca, NY}
+%Conc. in Software Engineering \\
+%College of Engineering \\
+%Dean's List (All Semesters) \\
+%\location{ Cum. GPA: 3.92 / 4.0 \\
+%Major GPA: 3.94 / 4.0}
+%\sectionsep
+
+%\subsection{La Martiniere for Boys}
+%\location{Grad. May 2011|  Kolkata, India}
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links} 
+Github:// \href{https://github.com/aazaff}{\custombold{aazaff}} \\
+%LinkedIn://  \href{https://www.linkedin.com/in/debarghyadas}{\custombold{debarghyadas}} \\
+%YouTube://  \href{https://www.youtube.com/user/azstrata}{\custombold{azstrata}} \\
+Twitter://  \href{https://twitter.com/azstrata}{\custombold{@azstrata}} \\
+ResearchGate://  \href{https://www.researchgate.net/profile/Andrew_Zaffos} {\custombold{Andrew Zaffos}}
+Website:// \href{http://www.azstrata.org}{\custombold{azstrata.org}}
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Coursework}
+% \subsection{Graduate}
+% Advanced Machine Learning \\
+% Open Source Software Engineering \\
+% Advanced Interactive Graphics \\
+% Compilers + Practicum \\
+% Cloud Computing \\
+% \sectionsep
+
+% \subsection{Undergraduate}
+% Information Retrieval \\
+% Operating Systems \\
+% Artificial Intelligence + Practicum \\
+% Functional Programming \\
+% Computer Graphics + Practicum \\
+% {\footnotesize \textit{\textbf{(Research Asst. \& Teaching Asst) }}} \\
+% Unix Tools and Scripting \\
+% \sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Programming}
+%\subsection{Programming}
+%\location{Over 5000 lines:}
+%Java \textbullet{}   Shell \textbullet{} JavaScript \textbullet{} Matlab \\
+%OCaml \textbullet{} Python \textbullet{} Rails \textbullet{} \LaTeX\ \\ 
+\location{R Programming Language:}
+\textbullet{}  Eight Years Experience \\
+\textbullet{}  Published \href{https://cran.r-project.org/web/packages/velociraptr/index.html}{velociraptr} R package \\
+\textbullet{}  Taught R-focused college course \\
+\sectionsep
+
+\location{Use Regularly:}
+R $\textcolor{black}{|}$ Bash $\textcolor{black}{|}$ Web APIs $\textcolor{black}{|}$ PostgreSQL and Postico $\textcolor{black}{|}$ git and GitHub $\textcolor{black}{|}$ PostGIS $\textcolor{black}{|}$ QGIS $\textcolor{black}{|}$ LaTex $\textcolor{black}{|}$ Markdown $\textcolor{black}{|}$ Adobe Illustrator $\textcolor{black}{|}$ Microsoft Office \\
+\sectionsep
+
+\location{Use Rarely:}
+C++ $\textcolor{black}{|}$ Python $\textcolor{black}{|}$ HTML $\textcolor{black}{|}$ ArcGIS $\textcolor{black}{|}$ CSS
+\sectionsep
+
+\section{Management}
+\location{Academic Experience:}
+\textbullet{} Taught and designed 3 college courses \\
+\textbullet{} 2 Macrostrat map digitizers \\
+\textbullet{} 1 GeoDeepDive research intern \\
+\textbullet{} 5 field assistants \\
+\sectionsep
+
+\location{Non-Academic Experience:}
+\textbullet{} Student Associate (Asst. Manager) \\ 
+Earl Gregg Swem Library
+\sectionsep
+
+\section{Communication}
+\location{Academic Communication:}
+\textbullet{} Published 11 scientific talks \\
+\textbullet{} Published 1 guidebook chapter \\
+\textbullet{} Published 4 scientific papers\\
+\sectionsep
+
+\location{Public Communication}
+\textbullet{} Published online R Tutorial \\
+\textbullet{} Given 5 invited lectures \\
+\sectionsep 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+\section{Postdoctoral Researcher}
+
+\runsubsection{GeoDeepDive}
+\descript{| \href{https://www.geodeepdive.org}{geodeepdive.org}}
+\location{January 2015 – Present | University of Wisconsin-Madison, WI}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Developer and data scientist for the GeoDeepDive initiative.
+\item GeoDeepDive is a digital library of machine readable documents taken from partnered open and closed-source publishers (e.g., Elsevier, Wiley, Taylor \& Francis).
+\item Regularly participate in design decisions related to the high-throughput computing work flow, metadata schemas, and API design.
+\item Designed multiple text-mining applications in R with research intern: intelligent matching of references between different databases, extracting the geolocation and age of geologic formations, and identifying aquifers in the US.
+\item Strong familiarity with the structure and use of derivative products: natural language processing, optical character recognition, and ElasticSearch.
+\item Currently co-authoring the next grant proposal for continued NSF funding.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Paleobiology Database}
+\descript{| \href{https://www.paleobiodb.org}{paleobiodb.org}}
+\location{January 2015 – Present | University of Wisconsin-Madison, WI}
+\begin{tightemize}
+\item Developer, data authorizer, and data scientist for the Paleobiology Database. 
+\item PBDB is a synoptic, global dataset of fossil occurrences and associated attributes: geolocation, geologic age, paleoenvironment, and literature metadata.
+\item Test and develop its web API and user applications that interact with the API, such as its \href{https://paleobiodb.org/navigator/}{Navigator} tool.
+\item Create educational tools using the database: an upper-level college course, an online tutorial, and an R package.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Macrostrat Database}
+\descript{| \href{https://www.macrostrat.org}{macrostrat.org}}
+\location{January 2015 – Present | University of Wisconsin-Madison, WI}
+\begin{tightemize}
+\item Developer and data scientist for the Macrostrat Database. 
+\item Macrostrat is a compilation of integrated geologic maps and stratigraphic columns. It allows for analyses of how geologic rock formations are distributed in space-time.
+\item Test and develop its web API and user applications that interact with the API, such as the \href{https://rockd.org}{Rockd} social media application for web, iOS, and Android.
+\item Oversaw two Macrostrat interns who processed and integrated maps into our infrastructure with QGIS, ArcGIS, GitHub, and PostgreSQL.
+\end{tightemize}
+\sectionsep
+
+\section{Graduate Work}
+
+%\runsubsection{Graduate Work}
+%\descript{}
+\location{August 2008 - December 2014}
+\begin{tightemize}
+\item Awarded 12 different merit-based grants or fellowships during graduate work.
+\item Served as a Teaching Assistant for graduate-level Data Analysis course.
+\item Published papers using multivariate analysis methods, linear and non-linear logistic regression methods, re-sampling techniques, and traditional univariate statistics.
+\item Hands on data collection in the field: drilling at sea, modern Caribbean beaches, and fossil digs across the continental United States. Comfortable working in difficult environments.
+\end{tightemize}
+\sectionsep
+
+
+%\runsubsection{Phabricator}
+%\descript{| Open Source Contributor \& Team Leader}
+%\location{Jan 2013 – May 2013 | Palo Alto, CA \& Ithaca, NY}
+%\begin{tightemize}
+%\item Phabricator is used daily by Facebook, Dropbox, Quora, Asana and more.
+%\item I created the Meme generator, the entire Lipsum application, ported Tokens to %different apps, fixed many bugs and more in PHP and Shell.
+%\item Led a team from MIT, Cornell, IC London and UHelsinki for the project.
+%\end{tightemize}
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Research}
+%\runsubsection{Cornell Robot Learning Lab}
+%\descript{| Head Undergrad Research}
+%\location{Jan 2014 – Present | Ithaca, NY}
+%Worked with \textbf{\href{http://www.cs.cornell.edu/~ashesh/}{Ashesh Jain}} and %\textbf{\href{http://www.cs.cornell.edu/~asaxena/}{Prof Ashutosh Saxena}} to create %\textbf{PlanIt}, a tool which  learns from large scale user preference feedback to %plan robot trajectories in human environments.  Publication submitted.
+%\sectionsep
+
+%\runsubsection{Cornell Phonetics Lab}
+%\descript{| Head Undergraduate Researcher}
+%\location{Mar 2012 – May 2013 | Ithaca, NY}
+%Lead the development of \textbf{QuickTongue}, the first ever breakthrough tongue-%controlled game with \textbf{\href{http://conf.ling.cornell.edu/~tilsen/}{Prof Sam %Tilsen}} to aid in Linguistics research. Publication submitted.
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Awards} 
+%\begin{tabular}{rll}
+%2014	     & top 52/2500  & KPCB Engineering Fellow\\
+%2014	     & 2\textsuperscript{nd} most points  & Google Code Jam, Qualification %Round\\
+%2014	     & 1\textsuperscript{st}/50  & Microsoft Coding Competition, Cornell\\
+%2013	     & National  & Jump Trading Challenge Finalist\\
+%2013     & 7\textsuperscript{th}/120 & CS 3410 Cache Race Bot Tournament  \\
+%2012     & 2\textsuperscript{nd}/150 & CS 3110 Biannual Intra-Class Bot Tournament \\
+%2011     & National & Indian National Mathematics Olympiad (INMO) Finalist \\
+%2010     & National & Comp. Soc. of India's National Programming Contest\\
+%\end{tabular}
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SOCIETIES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Societies} 
+
+%\begin{tabular}{rll}
+%2014 	& top 12\%ile    & Tau Beta Pi Engineering Honor Society\\
+%2014   & National   & The Global Leadership and Education Forum (tGELF)\\
+%2012   &  National  & Golden Key International Honor Society\\
+%2012   &  National   & National Society of Collegiate Scholars\\
+%\end{tabular}
+%\sectionsep
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}
