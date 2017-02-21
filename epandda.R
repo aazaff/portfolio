@@ -19,6 +19,7 @@ if (suppressWarnings(require("stringdist"))==FALSE) {
     library("stringdist");
     }
 
+# Currently mac only
 if (suppressWarnings(require("doParallel"))==FALSE) {
     install.packages("doParallel",repos="http://cran.cnr.berkeley.edu/");
     library("doParallel");
@@ -70,7 +71,8 @@ PBDBRefs<-subset(PBDBRefs,nchar(PBDBRefs[,"pbdb_title"])>2)
 # Because GDD contains several million documents, and this is only an example, we only download gdd documents
 # Where the publication name holds some similarity to the string "Paleontology"
 Paleontology<-fromJSON("https://geodeepdive.org/api/articles?pubname_like=Paleontology")
-# Where the publication name holds some similarity to the string geology
+# Where the publication name holds some similarity to the string "Geology"
+# Because of the size of this request, the call may fail if the APIs load sharing capabilities are currently overloaded
 Geology<-fromJSON("https://geodeepdive.org/api/articles?pubname_like=Geology")
 
 # Move down two dimensions of the JSON/List object so that GDDRefs is actually an iterable object - i.e., each element is an article
@@ -100,8 +102,8 @@ GDDRefs[,"gdd_pubtitle"]<-as.character(GDDRefs[,"gdd_pubtitle"])
 # Convert the title and pubtitle to all caps, because stringsim, unlike grep, cannot distinguish between cases
 PBDBRefs[,"pbdb_title"]<-tolower(PBDBRefs[,"pbdb_title"])
 PBDBRefs[,"pbdb_pubtitle"]<-tolower(PBDBRefs[,"pbdb_pubtitle"])
-DDRefs[,"gdd_title"]<-tolower(DDRefs[,"gdd_title"])
-DDRefs[,"gdd_pubtitle"]<-tolower(DDRefs[,"gdd_pubtitle"])
+GDDRefs[,"gdd_title"]<-tolower(GDDRefs[,"gdd_title"])
+GDDRefs[,"gdd_pubtitle"]<-tolower(GDDRefs[,"gdd_pubtitle"])
 
 #############################################################################################################
 ########################################## MATCH TITLES, EPANDDA ############################################
@@ -119,17 +121,17 @@ matchTitle<-function(x,y) {
 clusterExport(cl=Cluster,varlist=c("matchTitle","stringsim"))
 
 # Find the best title matches
-TitleSimilarity<-parSapply(Cluster,PBDBRefs[,"pbdb_title"],matchTitle,DDRefs[,"gdd_title"])
+TitleSimilarity<-parSapply(Cluster,PBDBRefs[,"pbdb_title"],matchTitle,GDDRefs[,"gdd_title"])
 # Reshape the Title Similarity Output
 TitleSimilarity<-as.data.frame(t(unname(TitleSimilarity)))
     
 # Bind Title Similarity by pbdb_no
 InitialMatches<-cbind(PBDBRefs[,"pbdb_no"],TitleSimilarity)
-InitialMatches[,"V1"]<-DDRefs[InitialMatches[,"V1"],"gdd_id"]
+InitialMatches[,"V1"]<-GDDRefs[InitialMatches[,"V1"],"gdd_id"]
 colnames(InitialMatches)<-c("pbdb_no","gdd_id","title_sim")
 
 # Merge initial matches, pbdb refs, and gdd refs
-InitialMatches<-merge(InitialMatches,DDRefs,by="gdd_id",all.x=TRUE)
+InitialMatches<-merge(InitialMatches,GDDRefs,by="gdd_id",all.x=TRUE)
 InitialMatches<-merge(InitialMatches,PBDBRefs,by="pbdb_no",all.x=TRUE)
     
 #############################################################################################################
@@ -160,8 +162,7 @@ stopCluster(Cluster)
 
 # Reformat MatchReferences
 MatchReferences<-as.data.frame(t(MatchReferences))
-  
-    
+      
 #############################################################################################################
 ########################################## MODEL BUILDLING, EPANDDA #########################################
 #############################################################################################################
@@ -170,7 +171,7 @@ MatchReferences<-as.data.frame(t(MatchReferences))
 ############################################# Model Building Script #########################################
 
 # Upload a training set of manually scored correct and false matches
-TrainingSet<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/epandda_training.csv")
+TrainingSet<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/learning_set.csv")
 
 # Check the plausible regression models
 Model1<-glm(Match~title_sim,family="binomial",data=TrainingSet)
