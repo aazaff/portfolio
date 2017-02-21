@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1487707692 "main.tex" "main.pdf" "main" 1487707693
+["pdflatex"] 1487712649 "main.tex" "main.pdf" "main" 1487712650
   "/etc/texmf/web2c/texmf.cnf" 1485873541 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -69,9 +69,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1471618383 31348 3c11c993a1d7e4662292855f9f7c8e1b ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1485873773 3544917 06670f005587d241f32ab6075612158e ""
   "deedy-resume-openfont.cls" 1487706027 3024 091cf704dc337b473e190449fcb58682 ""
-  "main.aux" 1487707693 1864 de8ef5ec7478bd1502a3a8c41c727bcd ""
-  "main.out" 1487707693 560 e2134523ad738d1e93ba559320bedad2 ""
-  "main.tex" 1487706009 12359 3b95d3eedefb1182361d0d7f325f672f ""
+  "main.aux" 1487712650 1864 de8ef5ec7478bd1502a3a8c41c727bcd ""
+  "main.out" 1487712650 560 e2134523ad738d1e93ba559320bedad2 ""
+  "main.tex" 1487712642 12359 4365e7fb1e6e3f61e858b7f979c07881 ""
   (generated)
   "main.out"
   "main.log"
