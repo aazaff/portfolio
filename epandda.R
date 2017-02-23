@@ -73,13 +73,14 @@ PBDBRefs<-subset(PBDBRefs,nchar(PBDBRefs[,"pbdb_title"])>2)
 Paleontology<-fromJSON("https://geodeepdive.org/api/articles?pubname_like=Paleontology")
 # Where the publication name holds some similarity to the string "Geology"
 # Because of the size of this request, the call may fail if the APIs load sharing capabilities are currently overloaded
-Geology<-fromJSON("https://geodeepdive.org/api/articles?pubname_like=Geology")
+# Geology<-fromJSON("https://geodeepdive.org/api/articles?pubname_like=Geology")
 
 # Move down two dimensions of the JSON/List object so that GDDRefs is actually an iterable object - i.e., each element is an article
 Paleontology<-Paleontology[[1]][[2]]
-Geology<-Geology[[1]][[2]]
+GDDRefs<-Paleontology
+# Geology<-Geology[[1]][[2]]
 # Combine the two lists
-GDDRefs<-append(Paleontology,Geology)
+# GDDRefs<-append(Paleontology,Geology)
 
 # Extract authors, docid, year, title, journal, and publisher information from the BibJson List into vectors
 gdd_id<-parSapply(Cluster,GDDRefs,function(x) x[["_gddid"]])
