@@ -4,7 +4,7 @@ The following is a collection of excerpts from scientific projects, educational 
 Copies of my [***résumé***](/resume/main.pdf) and [***curriculum vitae***](/cv/resume.pdf) are also included in this repository.
 
 ## Table of Contents
-###[Quantitative Paleobiology](#quantitative-paleobiology-excerpt): R, git, web APIs
+### [Quantitative Paleobiology](#quantitative-paleobiology-excerpt): R, git, web APIs
 I taught an upper-level Quantitative Paleobiology course at the University of Wisconsin-Madison during the Spring 2016 semester. The course focused on points of ecological and geological theory, statistical principles, programming in R, and web API usage. The class used GitHub as the primary assignment submission, material distribution, and grading platform. This project was funded as part of an NSF research grant to develop educational tools related to the [Paleobiology Database](https://www.paleobiodb.org) data service ([API](https://paleobiodb.org/data1.2/)). 
 
 ### [Paleogeographic Analyses](#paleogeographic-analyses-excerpt): PostGIS, R, PostgreSQL, web APIs
