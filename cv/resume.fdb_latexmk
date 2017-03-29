@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1490804186 "resume.tex" "resume.pdf" "resume" 1490804188
+["pdflatex"] 1490804359 "resume.tex" "resume.pdf" "resume" 1490804361
   "/etc/texmf/web2c/texmf.cnf" 1489324294 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -81,15 +81,15 @@
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1489324552 3546139 8e7f83c747003ce0ce0fadaceca86184 ""
   "awesome-cv.cls" 1490803478 22238 a6dbf96cb115ede3225ff6717f3ef5d0 ""
   "fontawesome.sty" 1490803478 84047 355f16a7bd7ed1782c4e1f3a0b78b931 ""
-  "resume.aux" 1490804188 628 8e762e3fa6240f6f8fe2e9db6cd33e0e ""
-  "resume.out" 1490804188 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "resume.tex" 1490804153 9959 2e58ca9dd68f4bb1fdc55d0c4c9eb974 ""
+  "resume.aux" 1490804361 628 8e762e3fa6240f6f8fe2e9db6cd33e0e ""
+  "resume.out" 1490804361 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "resume.tex" 1490804352 9961 908cd97ed5f032aa76ba29f095750d9a ""
   "resume/education.tex" 1490803478 808 249b23a1418a7b36d0ce0cd58fe7fc33 ""
   "resume/experience.tex" 1490803478 802 5468dd1cc27d133d1180402921ac29a3 ""
   "resume/extracurricular.tex" 1490803478 438 122d4d322002d0307065261c3d87caa5 ""
   "resume/honors.tex" 1490803478 1070 01ea948e6da52a2712197137f49362f0 ""
   (generated)
+  "resume.out"
   "resume.pdf"
   "resume.aux"
-  "resume.out"
   "resume.log"
