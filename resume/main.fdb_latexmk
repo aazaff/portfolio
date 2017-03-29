@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1487712649 "main.tex" "main.pdf" "main" 1487712650
-  "/etc/texmf/web2c/texmf.cnf" 1485873541 475 c0e671620eb5563b2130f56340a5fde8 ""
+["pdflatex"] 1490803453 "main.tex" "main.pdf" "main" 1490803454
+  "/etc/texmf/web2c/texmf.cnf" 1489324294 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf" 1367878877 6963 2e0cb3d93aa64508bdb0db58ae900d97 ""
@@ -67,13 +67,13 @@
   "/usr/share/texmf/tex/latex/tipa/t3cmr.fd" 1414244106 1257 fd5b1c2f0106f9cf12cdb2ff961987c5 ""
   "/usr/share/texmf/tex/latex/tipa/t3enc.def" 1414244106 26483 c461a68c34040cb0d96c43e86c012a6d ""
   "/usr/share/texmf/web2c/texmf.cnf" 1471618383 31348 3c11c993a1d7e4662292855f9f7c8e1b ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1485873773 3544917 06670f005587d241f32ab6075612158e ""
-  "deedy-resume-openfont.cls" 1487706027 3024 091cf704dc337b473e190449fcb58682 ""
-  "main.aux" 1487712650 1864 de8ef5ec7478bd1502a3a8c41c727bcd ""
-  "main.out" 1487712650 560 e2134523ad738d1e93ba559320bedad2 ""
-  "main.tex" 1487712642 12359 4365e7fb1e6e3f61e858b7f979c07881 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1489324552 3546139 8e7f83c747003ce0ce0fadaceca86184 ""
+  "deedy-resume-openfont.cls" 1490803328 3024 091cf704dc337b473e190449fcb58682 ""
+  "main.aux" 1490803454 1864 de8ef5ec7478bd1502a3a8c41c727bcd ""
+  "main.out" 1490803454 560 e2134523ad738d1e93ba559320bedad2 ""
+  "main.tex" 1490803357 12295 be88ad54b6b97a2559d2a3df44d647b8 ""
   (generated)
-  "main.out"
+  "main.pdf"
   "main.log"
   "main.aux"
-  "main.pdf"
+  "main.out"
