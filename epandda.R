@@ -134,16 +134,7 @@ colnames(InitialMatches)<-c("pbdb_no","gdd_id","title_sim")
 # Merge initial matches, pbdb refs, and gdd refs
 InitialMatches<-merge(InitialMatches,GDDRefs,by="gdd_id",all.x=TRUE)
 InitialMatches<-merge(InitialMatches,PBDBRefs,by="pbdb_no",all.x=TRUE)
-
-# Bind Title Similarity with pbdb_no
-InitialMatches<-cbind(PBDBRefs[,"pbdb_no"],TitleSimilarity)
-InitialMatches[,"V1"]<-GDDRefs[InitialMatches[,"V1"],"gdd_id"]
-colnames(InitialMatches)<-c("pbdb_no","gdd_id","title_sim")
-
-# Merge initial matches, pbdb refs, and gdd refs
-InitialMatches<-merge(InitialMatches,GDDRefs,by="gdd_id",all.x=TRUE)
-InitialMatches<-merge(InitialMatches,PBDBRefs,by="pbdb_no",all.x=TRUE)    
-    
+ 
 #############################################################################################################
 ########################################## MATCH FIELDS, EPANDDA ############################################
 #############################################################################################################
