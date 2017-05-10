@@ -161,9 +161,23 @@ matchAdditional<-function(InitialMatches) {
     }
 
 ######################################### Match Additional Fields Script ####################################  
+# Reset the data types; columns are sometimes coerced to the incorrect data type for unknown reasons
+InitialMatches[,"pbdb_no"]<-as.numeric(InitialMatches[,"pbdb_no"])
+InitialMatches[,"gdd_id"]<-as.character(InitialMatches[,"gdd_id"])
+InitialMatches[,"title_sim"]<-as.numeric(InitialMatches[,"title_sim"])
+InitialMatches[,"gdd_author"]<-as.character(InitialMatches[,"gdd_author"])
+InitialMatches[,"gdd_year"]<-as.numeric(InitialMatches[,"gdd_year"])
+InitialMatches[,"gdd_title"]<-as.character(InitialMatches[,"gdd_title"])
+InitialMatches[,"gdd_pubtitle"]<-as.character(InitialMatches[,"gdd_pubtitle"]) 
+InitialMatches[,"gdd_publisher"]<-as.character(InitialMatches[,"gdd_publisher"]) # This is where the break was happening
+InitialMatches[,"pbdb_author"]<-as.character(InitialMatches[,"pbdb_author"])
+InitialMatches[,"pbdb_year"]<-as.numeric(InitialMatches[,"pbdb_year"])
+InitialMatches[,"pbdb_title"]<-as.character(InitialMatches[,"pbdb_title"])
+InitialMatches[,"pbdb_pubtitle"]<-as.character(InitialMatches[,"pbdb_pubtitle"])
+                         
 # export matchAdditional to the cluster
 clusterExport(cl=Cluster,varlist=c("matchAdditional"))                           
-
+                         
 # Perform the additional matches
 MatchReferences<-parApply(Cluster, InitialMatches, 1, matchAdditional)
 
@@ -174,7 +188,7 @@ stopCluster(Cluster)
 MatchReferences<-as.data.frame(t(MatchReferences),stringsAsFactors=FALSE)
       
 #############################################################################################################
-########################################## MODEL BUILDLING, EPANDDA #########################################
+########################################## MODEL BUILDING, EPANDDA #########################################
 #############################################################################################################
 # No functions at this time
 
