@@ -191,7 +191,7 @@ MatchReferences[,"author_in"]<-as.logical(MatchReferences[,"author_in"])
 MatchReferences[,"year_match"]<-as.logical(MatchReferences[,"year_match"])
     
 # Upload a training set of manually scored correct and false matches
-TrainingSet<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/learning_set.csv",stringsAsFactors=FALSE)
+TrainingSet<-read.csv("https://raw.githubusercontent.com/aazaff/portfolio/master/CSV/learning_set.csv",stringsAsFactors=FALSE,row.names=1)
 
 # Check the plausible regression models
 Model1<-glm(Match~title_sim,family="binomial",data=TrainingSet)
