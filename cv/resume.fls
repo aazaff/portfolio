@@ -155,11 +155,13 @@ INPUT resume.out
 INPUT resume.out
 INPUT resume.out
 OUTPUT resume.out
-INPUT resume/education.tex
-INPUT resume/education.tex
+INPUT resume/presentation.tex
+INPUT resume/presentation.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi5.tfm
+INPUT resume/education.tex
+INPUT resume/education.tex
 INPUT resume/extracurricular.tex
 INPUT resume/extracurricular.tex
 INPUT resume/experience.tex
