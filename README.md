@@ -69,7 +69,7 @@ Our group hopes to eventually create strong cross-referenced links between scien
 ## R Package: velociraptr Demo
 This is an example script using functions from the velociraptr package to caculate the history of Phanerozoic biodiversity for each of the 34 internationally recognized geolgoic epochs in Earth History. It is an excerpt of code I wrote for a paper currently under review at the Proceedings of the National Academy of Sciences. Most of the functions in this script come from the velociraptr package. I have tagged all instances of those functions with the standard R coding convention `velociraptr::function( )` so that it is clear which functions are relevant to the package demo.
 
-**Script**: [excerptRichness.R](\excerptRichness.R)
+**Script**: [excerptRichness.R](/excerptRichness.R)
 
 ### example figure
 This figure depicts the history of marine biodiversity (number of unique marine organisms) throughout the history of complex animal life.
@@ -86,7 +86,7 @@ This figure depicts the history of marine biodiversity (number of unique marine 
 ## Multivariate Fossil Analyses Demo
 In this example, we start with a multivariate dataset where each row is a sample from a different geographic location (a site) and each column represents the abundance of a particular species at that site. I use [detrended correspondence analysis](https://github.com/paleobiodb/teachPaleobiology/blob/master/LabExercise4.md#lab-exercise-4) to measure how similar different samples are to each other based on their constituent species or how similar different species are to each other based on shared geographic distribution. This is an excerpt from my dissertation using detrended correspondence analysis to quantify the presence of ecological gradients in the distribution of marine organisms 380 million years ago. This analysis found that ancient marine animals from New York were geographically and environmentally distributed based on their water depth and sediment type preferences. 
 
-**Script**: [ordinateHamilton.R](\ordinateHamilton.R)
+**Script**: [ordinateHamilton.R](/ordinateHamilton.R)
 
 ### example figure
 Ancient fossil-bearing marine sediments deposited in New York ~380 million years ago follow an unsual geographic distribution. Sediments near the Finger Lakes region of central New York were deposited in very deep water, and are bracketed to the east and west by sediments from shallower-water environments. There was a tropical reef like environment to the west (near modern day Buffalo), and a sandy beach environment to the east (past Syracuse). This figures illustrates how DCA can be used to understand the distribution of different species in this complex geographic and environmental context.
