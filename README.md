@@ -59,7 +59,7 @@ I generally take these products and analyze them to produce scientific results, 
 
 Our group hopes to eventually create strong cross-referenced links between scientific literature stored in major databases like [iDigBio](https://www.idigbio.org/), [iDigPaleo](https://www.idigpaleo.org/), the [Paleobiology Database](https://www.paleobiodb.org/), the [Macrostrat Database](https://www.macrostrat.org/), [Neotoma](https://www.neotomadb.org/), and the [Ocean Biogeographic Information System](https://www.iobis.org/). This way data in one database (e.g., the museum where a fossil specimen is stored) can be reliably linked to information stored in the other database (e.g., where the fossil was collected) from the same scientific reference. 
 
-**Script**: [epandda.R](\epandda.R)
+**Script**: [epandda.R](/epandda.R)
 
 ### further information
 + [DeepDive](http://deepdive.stanford.edu/): Our machine learning partner at stanford for the GeoDeepDive project.
