@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2017.10.24)  25 OCT 2017 22:03
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/Debian) (preloaded format=xelatex 2018.1.13)  30 JAN 2018 19:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -819,9 +819,9 @@ LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 6.9999pt on input line 8.
 LaTeX Font Info:    Font shape `EU1/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 4.99992pt on input line 8.
-)
-(./resume/experience.tex [2]) [3]
-Overfull \hbox (8.81601pt too wide) in paragraph at lines 155--156
+ [2])
+(./resume/experience.tex) [3]
+Overfull \hbox (8.81601pt too wide) in paragraph at lines 161--162
 []\EU1/SourceSansPro(2)/bx/n/10 Zaffos, A.\EU1/SourceSansPro(2)/m/n/10 , Peters
 , S.E., and S.M. McMullen (\EU1/SourceSansPro(2)/m/it/10 in preparation\EU1/Sou
 rceSansPro(2)/m/n/10 ). The dynamics of geographic range size over geologic tim
@@ -829,17 +829,17 @@ escales.
  []
 
 (./resume/honors.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (./resume.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 163.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 163.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 169.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
  27973 strings out of 493589
- 483987 string characters out of 6145555
- 606998 words of memory out of 5000000
+ 483987 string characters out of 6145556
+ 603998 words of memory out of 5000000
  31103 multiletter control sequences out of 15000+600000
  7092 words of font info for 85 fonts, out of 8000000 for 9000
  1347 hyphenation exceptions out of 8191
